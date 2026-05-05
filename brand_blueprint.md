@@ -1,7 +1,7 @@
 # Brand Blueprint — Modernote
 
 ## Creator
-Caesar (also Cesar)
+Cesar
 
 ## Channel
 Modernote
@@ -27,7 +27,7 @@ Journaling for business clarity, decision-making, and self-understanding — for
 - Not intimidating — the kind of person who says "I don't know" and means it
 
 ## Caesar's Story
-Caesar is a dad, a husband, a full-time employee (15+ years in design and marketing), and a relentless entrepreneur. He left a stable job to go freelance, built something that worked for a year, then watched it get harder and harder until he had to go back to a W2. He's tried. He's failed. He's still going.
+Cesar is a dad, a husband, a full-time employee (15+ years in design and marketing), and a relentless entrepreneur. He left a stable job to go freelance, built something that worked for a year, then watched it get harder and harder until he had to go back to a W2. He's tried. He's failed. He's still going.
 
 He started journaling because his mind was cluttered — too many responsibilities, too many fires, too little time. Kids, marriage, work, ambition, all colliding. He found that when he doesn't write, unnecessary problems follow. When he does write — really writes, really feels it — things move. Goals get closer. Decisions get clearer. The negative spiral stops.
 
