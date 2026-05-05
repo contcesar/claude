@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mb-6">
+  <a href="/" class="text-gray-400 hover:text-white text-sm transition-colors">← Back to Dashboard</a>
+</div>
+
+{% if video %}
+<div class="mb-6">
+  <h1 class="text-xl font-semibold">LinkedIn Posts</h1>
+  <p class="text-gray-400 text-sm mt-1">Based on: {{ video.title }}</p>
+</div>
+{% endif %}
+
+<div class="flex gap-3 mb-6">
+  <button id="generateBtn" onclick="generatePosts()"
+    class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+    {% if posts %}Regenerate Posts{% else %}Generate Posts{% endif %}
+  </button>
+</div>
+
+<div id="loading" class="hidden text-center py-16 text-gray-400">
+  <p>Generating LinkedIn posts — this takes about 15 seconds...</p>
+</div>
+
+<div id="postsView" class="{% if not posts %}hidden{% endif %}">
+  <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+    <pre class="whitespace-pre-wrap text-sm leading-relaxed font-sans" id="postsText">{{ posts or '' }}</pre>
+  </div>
+</div>
+
+<script>
+  async function generatePosts() {
+    document.getElementById('loading').classList.remove('hidden');
+    document.getElementById('postsView').classList.add('hidden');
+    document.getElementById('generateBtn').disabled = true;
+
+    const resp = await fetch('/generate_linkedin/{{ video.id if video else "" }}', { method: 'POST' });
+    const data = await resp.json();
+
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('generateBtn').disabled = false;
+
+    if (data.success) {
+      document.getElementById('postsText').textContent = data.posts;
+      document.getElementById('postsView').classList.remove('hidden');
+      document.getElementById('generateBtn').textContent = 'Regenerate Posts';
+    }
+  }
+</script>
+
+{% endblock %}
